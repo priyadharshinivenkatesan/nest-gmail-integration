@@ -2,9 +2,9 @@ import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 import { google } from 'googleapis';
 const oauth2Client = new google.auth.OAuth2(
-  '325866638337-3fljd08asoqoj32lf7ebuqrrld8e8pu4.apps.googleusercontent.com',
-  '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',
-  'http://localhost:3000/authResponse',
+  process.env.CLIENT_ID,
+  process.env.CLIENT_SECRET,
+  process.env.CALLBACK_URL,
 );
 
 const token = {
